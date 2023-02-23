@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Feb  9 11:11:48 2023
-This script must be run at least one time before runing app.py for streamlit
+This script must be run at least one time before runing app.py for streamlit APP.
 
-This script is for training models and save them
+In this script models are trained and saved : results may be improved.
+
+This application is for learn purpose only.
 
 @author: Zied
 """
@@ -40,13 +42,10 @@ def set_path():
     return path, model_path
         
     
-
-
 #@jit(target_backend='cuda')     
 def load_data():
     dataset= load_diabetes(as_frame=True, scaled=False)
     return(dataset)
-
 
 #@jit(target_backend='cuda')     
 def save_descreption(data):
