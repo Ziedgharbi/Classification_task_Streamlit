@@ -26,7 +26,6 @@ import seaborn as sns
 import os 
 import re 
 
-
 def set_path():
     
     path=os.getcwd()
@@ -101,8 +100,7 @@ def evaluate(y_test, y_pred):
     
     
 
-
-@jit(target_backend='cuda')
+#@jit(target_backend='cuda')
 def train(models,params,X,y,name,model_path):
     
     X_scaled, X_test, y_scaled, y_test, dict_stat=split(X,y)
@@ -209,7 +207,6 @@ def main():
     results.to_csv(path+"/rslt.txt", header=True, index=True, sep=',', mode='w')
     
     return(results)
-
 
 
 main()
