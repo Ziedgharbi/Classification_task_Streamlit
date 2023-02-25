@@ -21,8 +21,6 @@ import re
 
 from annexe_app import *
 
-
-
 def main():
     
     
@@ -40,7 +38,7 @@ def main():
     y_mean=dict_stat["y_mean"]
     y_std=dict_stat["y_std"]
     
-    
+   
     st.title("Diabet disease progression one year prediction, exemple")
     st.subheader("By Zied GHARBI")
     f=open(path+"/descreption.txt", "r")
@@ -80,8 +78,6 @@ def main():
     
     st.sidebar.markdown('# Choose your model(s) for prediction :')
     model=st.sidebar.multiselect("Models : multiselect authorised :", options=["Linear regression","Ridge regression","SGD regression" ],default=["Linear regression"] )
-    
-    
   
     if st.sidebar.button("Calculate",key="butt"):
         
@@ -144,12 +140,6 @@ def main():
             text=text+" \n "+ str(key)+" ---- "+str(value)
         
         st.text(text)
-            
-    
-     
-    
-
-
 
 if __name__ == '__main__':
 
