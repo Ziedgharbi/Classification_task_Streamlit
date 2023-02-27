@@ -76,7 +76,6 @@ def split (X,y):
     
     y_scaled=(y_train-y_mean)/y_std
     
-    
     dict_stat={"x_mean": x_mean,
                'x_std':x_std,
                "y_mean":y_mean,
@@ -98,8 +97,7 @@ def evaluate(y_test, y_pred):
     r2=r2_score(y_test, y_pred)
     return([mean_abs,mean_squ,r2])
     
-    
-
+  
 #@jit(target_backend='cuda')
 def train(models,params,X,y,name,model_path):
     
@@ -110,12 +108,9 @@ def train(models,params,X,y,name,model_path):
     y_mean=dict_stat["y_mean"]
     y_std=dict_stat["y_std"]
     
-    
     rslt=[]
     i=0
 
- 
-   
     for i in range(3):
         model=models[i]
         param=params[i]
@@ -134,8 +129,6 @@ def train(models,params,X,y,name,model_path):
         y_std_array=np.full((y_pred.shape[0],1), y_std)
         y_mean_array=np.full((y_pred.shape[0],1),y_mean)
 
-
-        
         y_pred=np.ravel(y_pred)* np.ravel(y_std_array )+np.ravel(y_mean_array)
         score=evaluate (np.ravel(y_test),y_pred)
         rslt.append(  {"model" : name[i],
@@ -143,7 +136,6 @@ def train(models,params,X,y,name,model_path):
                        "mean_squ": score[1],
                        "r2":score[2]})
     return(rslt)
-    
     
 def main():
    
@@ -164,13 +156,9 @@ def main():
     name_x=list(X.columns)
     name_y=list(y.columns)  
   
-  
-    
-    
-   
+
     affichage(X.loc[:,X.columns!='sex'])
     
- 
     model1=LinearRegression()
     param1={"fit_intercept": [False, True],
             "positive": [False, True]}   
@@ -207,7 +195,6 @@ def main():
     results.to_csv(path+"/rslt.txt", header=True, index=True, sep=',', mode='w')
     
     return(results)
-
 
 main()
 
