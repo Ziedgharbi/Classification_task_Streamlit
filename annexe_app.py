@@ -40,7 +40,6 @@ def set_path():
     
     return path, model_path
         
-    
 #@jit(target_backend='cuda')     
 def load_data():
     dataset= load_diabetes(as_frame=True, scaled=False)
@@ -96,8 +95,7 @@ def evaluate(y_test, y_pred):
     mean_squ=mean_squared_error(y_test, y_pred)
     r2=r2_score(y_test, y_pred)
     return([mean_abs,mean_squ,r2])
-    
-  
+     
 #@jit(target_backend='cuda')
 def train(models,params,X,y,name,model_path):
     
@@ -178,8 +176,7 @@ def main():
     name=["Linear_models", "Ridge_model","SGDR_model"]
     end_score= train(models,params,X,y,name,model_path)
     
-    
-    
+
     l=list( end_score[1].keys())
    
     results=pd.DataFrame([],index=name, columns= l[-3:])
