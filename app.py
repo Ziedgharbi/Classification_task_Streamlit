@@ -4,8 +4,6 @@ import pandas as pd
 from joblib import dump, load
 from sklearn.linear_model import LinearRegression, Ridge, SGDRegressor
 
-
-
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split, GridSearchCV
 
@@ -23,9 +21,7 @@ from annexe_app import *
 
 def main():
     
-    
     path, model_path=set_path()
-    
     
     data=load_data()
     X=data["data"]
@@ -38,7 +34,7 @@ def main():
     y_mean=dict_stat["y_mean"]
     y_std=dict_stat["y_std"]
     
-   
+  
     st.title("Diabet disease progression one year prediction, exemple")
     st.subheader("By Zied GHARBI")
     f=open(path+"/descreption.txt", "r")
