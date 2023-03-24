@@ -33,7 +33,6 @@ def main():
     x_std=dict_stat["x_std"]
     y_mean=dict_stat["y_mean"]
     y_std=dict_stat["y_std"]
-    
   
     st.title("Diabet disease progression one year prediction, exemple")
     st.subheader("By Zied GHARBI")

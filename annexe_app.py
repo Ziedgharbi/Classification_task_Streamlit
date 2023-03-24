@@ -82,7 +82,6 @@ def split (X,y):
     
     return(X_scaled, X_test, y_scaled, y_test, dict_stat)
 
-
 def affichage (x):
     fig = plt.figure(figsize = (8,10))
     ax = fig.gca()
@@ -176,7 +175,6 @@ def main():
     name=["Linear_models", "Ridge_model","SGDR_model"]
     end_score= train(models,params,X,y,name,model_path)
     
-
     l=list( end_score[1].keys())
    
     results=pd.DataFrame([],index=name, columns= l[-3:])
