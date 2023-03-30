@@ -5,6 +5,7 @@ This script must be run at least one time before runing app.py for streamlit APP
 
 In this script models are trained and saved : results may be improved.
 
+
 This application is for learn purpose only.
 
 @author: Zied
