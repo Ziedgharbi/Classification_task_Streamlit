@@ -5,7 +5,6 @@ This script must be run at least one time before runing app.py for streamlit APP
 
 In this script models are trained and saved : results may be improved.
 
-
 This application is for learn purpose only.
 
 @author: Zied
@@ -89,7 +88,6 @@ def affichage (x):
     x.hist(ax=ax, color = "skyblue")
     plt.show()
     
-    
 def evaluate(y_test, y_pred):
     mean_abs=mean_absolute_error(y_test, y_pred)
     mean_squ=mean_squared_error(y_test, y_pred)
@@ -114,8 +112,7 @@ def train(models,params,X,y,name,model_path):
         param=params[i]
         clf=GridSearchCV(model, param)
         clf.fit(X_scaled,y_scaled)
-        
-        
+         
         X_test_scaled= (X_test.loc[:,X_test.columns!='sex'] - x_mean)/x_std
         X_test_scaled.insert(0,'sex',X_test['sex'])
         
@@ -142,7 +139,6 @@ def main():
     data=load_data()
     print(save_descreption(data['DESCR']))
  
-
     X=data["data"]
     y=data["target"].to_frame()
     
@@ -154,7 +150,6 @@ def main():
     name_x=list(X.columns)
     name_y=list(y.columns)  
   
-
     affichage(X.loc[:,X.columns!='sex'])
     
     model1=LinearRegression()
@@ -193,4 +188,3 @@ def main():
     return(results)
 
 main()
-
