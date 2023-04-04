@@ -18,8 +18,7 @@ import re
 
 from annexe_app import *
 
-def main():
-    
+def main():    
     path, model_path=set_path()
     
     data=load_data()
