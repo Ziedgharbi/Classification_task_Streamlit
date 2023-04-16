@@ -82,7 +82,6 @@ def split (X,y):
     
     return(X_scaled, X_test, y_scaled, y_test, dict_stat)
 
-
 def affichage (x):
     fig = plt.figure(figsize = (8,10))
     ax = fig.gca()
