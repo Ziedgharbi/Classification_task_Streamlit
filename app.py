@@ -43,7 +43,7 @@ def main():
     These models were trained on data set descrebied as folow :
     """, unsafe_allow_html=True
     )
-    
+   
     st.text(desc)
     
     st.sidebar.markdown('# Choose your parameters')
