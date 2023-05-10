@@ -186,5 +186,4 @@ def main():
     results.to_csv(path+"/rslt.txt", header=True, index=True, sep=',', mode='w')
     
     return(results)
-
 main()
